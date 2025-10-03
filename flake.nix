@@ -117,6 +117,12 @@
                                     source "$VENV_DIR/bin/activate"
                                 fi
                                 
+                                if [ -f "./.env.ignore" ]
+                                then
+                                    # load hidden env vars
+                                    . .env.ignore
+                                fi
+                                
                                 # this enables some impure stuff like sudo, comment it out to get FULL purity
                                 export PATH="$PATH:/usr/bin/"
                             '';
