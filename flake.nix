@@ -107,6 +107,11 @@
                                     if [ -f "./requirements.txt" ]
                                     then
                                         pip install -r ./requirements.txt
+                                        # if crawl4ai-setup exists
+                                        if [ -n "$(command -v "crawl4ai-setup")" ]
+                                        then
+                                            crawl4ai-setup
+                                        fi
                                     fi
                                 else
                                     source "$VENV_DIR/bin/activate"
